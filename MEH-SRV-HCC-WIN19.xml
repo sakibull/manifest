@@ -15250,7 +15250,7 @@
       <platform name="EGS-WS-WIN11" version="v111" />
       <platform name="EGS-WS-WIN10" version="v111" />
       <platform name="SPR-WS-WIN11" version="V111" />
-      <platform name="MEH-SRV-HCC-WIN19" version="V111" />
+      <platform name="MEH-SRV-HCC-WIN19" version="v106-v3" />
       <platform name="EGS-EMR-WS-WIN11" version="v111" />
     </platforms>
     <annotations>
