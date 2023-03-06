@@ -64,7 +64,7 @@
   <project name="frameworks.devops.intel-devops-framework.abstract-build-interface" ingredient="IntelPlatformBuild" pkg-path="-" version="-" path="Build" revision="2.5.0platci_rc3" remote="OWR-GitHub" type="bldtool" hsd-full-name="platform.Common.sw.tool.OWR Build Scripts">
     <platforms>
       <platform name="LNL-M-SV2-PSS" />
-      </platforms>
+    </platforms>
     <annotations>
       <annotation name="owner" value="peter.g.tiegs@intel.com" />
       <annotation name="maintainer" value="bairaiah.gajavada@intel.com" />
@@ -143,4 +143,3 @@
     </annotations>
   </project>
 </manifest>
-  
