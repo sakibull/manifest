@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <IntelPlatformConfig>MEH-SRV-HCC-WIN19</IntelPlatformConfig>
+        <MileStone>PreSi</MileStone>
+        <BaseImageName></BaseImageName>
+        <Platform>x64</Platform>
+        <Configuration>Release</Configuration>
+        <SOC>CFL</SOC>
+        <CoreProject>Mehlow</CoreProject>
+        <SystemType>RVP</SystemType>
+        <OS>Win10</OS>
+        <ValidationPlatform></ValidationPlatform>
+        <HSDExecConfig>platform.Mehlow.CFL6C-meh-srv-hcc-win19</HSDExecConfig>
+        <BuildNotification>anil.kumar.sethi@intel.com,apurbo.chakrabarty@intel.com</BuildNotification>
+        <Gatekeepers>anil.kumar.sethi@intel.com,apurbo.chakrabarty@intel.com,sakib.ulla.khan@intel.com</Gatekeepers>
+        <OneBkcUrl>https://onebkc.intel.com</OneBkcUrl>
+        <AutoMerge>true</AutoMerge>
+    </PropertyGroup>
+    <PropertyGroup Label="E2E Config">
+        <TwsController>us-add-prod.hf.intel.com</TwsController>
+        <SutTimeOutHours>1.2</SutTimeOutHours>
+        <Run_PreMerge_CI_AT>false</Run_PreMerge_CI_AT>
+        <Run_PostMerge_CI_AT>false</Run_PostMerge_CI_AT>
+        <Run_Daily_AT>false</Run_Daily_AT>
+        <E2ETestResultsType>Prod</E2ETestResultsType>
+        <jama-project>243</jama-project>
+        <JamaServerUrl>https://jama4.intel.com</JamaServerUrl>
+        <ESTenant>1205013915</ESTenant>
+        <WIMStoreUNCPath>\\basmcgazba02.gar.corp.intel.com\OWR\TWS\Images</WIMStoreUNCPath>
+    </PropertyGroup>
+    <PropertyGroup Label="config_overrides">
+        <agentLabelName>dcgba</agentLabelName>
+        <KitDeployLocation>dcg-dea-srvplat-local/Kits</KitDeployLocation>
+        <KitDeployRepo>dcg-dea-srvplat-local</KitDeployRepo>
+        <KitDeployDir>Kits</KitDeployDir>
+    </PropertyGroup>
+    <ItemGroup>
+        <Images Include="WIM">
+            <BaseOS>BaseWIM-RS5</BaseOS>
+            <ImageType>WIM</ImageType>
+            <ImageTag>RS5</ImageTag>
+            <OSType>withos</OSType>
+        </Images>
+        <Images Include="WIM">
+            <BaseOS>BaseWIM-RS5</BaseOS>
+            <ImageType>zip</ImageType>
+            <ImageTag>SWpackage</ImageTag>
+            <OSType>withoutos</OSType>
+        </Images>
+    </ItemGroup>
+    <ItemGroup>
+        <Paths Include="winpe">
+            <Firmwares>files\BKCPkg\Firmwares</Firmwares>
+            <Drivers>files\BKCPkg\Drivers</Drivers>
+            <DriverInstall>files\BKCPkg\DriverInstall</DriverInstall>
+            <Pre-Inject>files\BKCPkg\Pre-Inject</Pre-Inject>
+            <configs>files\BKCPkg</configs>
+            <configs1>root</configs1>
+        </Paths>
+    </ItemGroup>
+    <ItemGroup>
+        <PlatformPropertyFilter Include="PlatformBits">
+          <Value>$(Platform)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="OS">
+          <Value>$(OS)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="PlatformFamily">
+          <Value>$(SOC)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="ProductType">
+          <Value>Consumer</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="OSType">
+          <Value>Desktop</Value>
+        </PlatformPropertyFilter>
+    </ItemGroup>
+    <ItemGroup>
+    <Ingredients Include="SGXFVT_Tool">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>configs</path>
+    </Ingredients>
+    <Ingredients Include="SPS_Tools">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>configs</path>
+    </Ingredients>
+    <Ingredients Include="SystemScope" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>configs</path>
+    </Ingredients>
+    <Ingredients Include="CAS_Windows" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Drivers</path>
+    </Ingredients>
+    <Ingredients Include="Chipset" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <PostInstallCmd>PostInstall.cmd</PostInstallCmd>
+        <path>DriverInstall</path>
+    </Ingredients>
+    <Ingredients Include="LOM_Springville" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <PostInstallCmd>PostInstall.cmd</PostInstallCmd>
+        <path>DriverInstall</path>
+    </Ingredients>
+    <Ingredients Include="WinPE" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>configs1</path>
+        <copyfile>true</copyfile>
+    </Ingredients>
+    <Ingredients Include="SGX" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Drivers</path>
+    </Ingredients>
+    <Ingredients Include="Intel_VROC" >
+        <InjectDriver>true</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Pre-Inject</path>
+    </Ingredients>
+    <Ingredients Include="Video" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <PostInstallCmd>PostInstall.cmd</PostInstallCmd>
+        <path>DriverInstall</path>
+    </Ingredients>
+    <Ingredients Include="IFWI">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares</path>
+    </Ingredients>
+    <Ingredients Include="CPLD">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares</path>
+    </Ingredients>
+    <Ingredients Include="BMC">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares</path>
+    </Ingredients>
+    <Ingredients Include="PMC">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares</path>
+    </Ingredients>
+    <Ingredients Include="SPS">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares</path>
+    </Ingredients>
+    <Ingredients Include="InstallScripts">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>configs</path>
+        <copyfile>true</copyfile>
+    </Ingredients>
+    <Ingredients Include="7Zip">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="BPM">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="EWDK">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="HSD-ES-API">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="IntelPlatformBuild">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="MSFTDeploymentTools">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="Sigcheck" >
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="Python37" >
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="CommonLibrary" >
+        <Global>true</Global>
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>false</CopyToImage>
+    </Ingredients>
+    <Ingredients Include="BinScope">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="TWS">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    </ItemGroup>
+</Project>

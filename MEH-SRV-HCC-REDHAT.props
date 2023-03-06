@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <IntelPlatformConfig>MEH-SRV-HCC-REDHAT</IntelPlatformConfig>
+        <MileStone>PreSi</MileStone>
+        <BaseImageName></BaseImageName>
+        <Platform>x64</Platform>
+        <Configuration>Release</Configuration>
+        <SOC>CFL</SOC>
+        <CoreProject>Mehlow</CoreProject>
+        <SystemType>RVP</SystemType>
+        <OS>RHEL</OS>
+        <Kernel>Linux</Kernel>
+        <ValidationPlatform></ValidationPlatform>
+        <KitShareDir>\\bastpdsrv07.gar.corp.intel.com\kits\BA</KitShareDir>
+        <PostImageToShare>true</PostImageToShare>
+        <HSDExecConfig>platform.Mehlow.CFL6C-meh-srv-hcc-redhat</HSDExecConfig>
+        <BuildNotification>anil.kumar.sethi@intel.com,apurbo.chakrabarty@intel.com,sakib.ulla.khan@intel.com</BuildNotification>
+        <Gatekeepers>anil.kumar.sethi@intel.com,apurbo.chakrabarty@intel.com</Gatekeepers>
+        <AutoMerge>true</AutoMerge>
+        <OneBkcUrl>https://onebkc.intel.com</OneBkcUrl>
+    </PropertyGroup>
+    <PropertyGroup Label="E2E Config">
+        <TestType>CAF</TestType>
+        <PlanID>2933</PlanID>
+        <TestExecutorName>Convergent Automation Framework</TestExecutorName>
+        <Run_PreMerge_CI_AT>false</Run_PreMerge_CI_AT>
+        <Run_PostMerge_CI_AT>false</Run_PostMerge_CI_AT>
+        <Run_Daily_AT>false</Run_Daily_AT>
+        <CAFServerUrl>https://dcg-caf.intel.com</CAFServerUrl>
+        <ESTenant></ESTenant>
+        <SutTimeOutHours>1.5</SutTimeOutHours>
+        <Retry>5</Retry>
+        <E2ETestResultsType>Prod</E2ETestResultsType>
+        <DefaultDomainName>gar.corp.intel.com</DefaultDomainName>
+        <WIMStoreUNCPath>//bastpdsrv07.gar.corp.intel.com/kits/BA</WIMStoreUNCPath>
+        <statusCheckIntervalSeconds>60</statusCheckIntervalSeconds>
+        <MaxWaitMinutes>5</MaxWaitMinutes>
+        <Enableflashing>true</Enableflashing>
+        <ReportType>JUnit</ReportType>
+        <ReportOutput>Result-x64-Release.xml</ReportOutput>
+        <SchemaVersion>1.0</SchemaVersion>
+    </PropertyGroup>
+    <PropertyGroup Label="config_overrides">
+        <agentLabelName>dcgba</agentLabelName>
+        <KitDeployLocation>dcg-dea-srvplat-local/Kits</KitDeployLocation>
+        <KitDeployRepo>dcg-dea-srvplat-local</KitDeployRepo>
+        <KitDeployDir>Kits</KitDeployDir>
+    </PropertyGroup>
+    <ItemGroup>
+        <Images Include="RHEL">
+            <BaseOS>RHEL</BaseOS>
+            <OSType>withoutos</OSType>
+            <ImageType>zip</ImageType>
+            <ImageTag>SWpackage</ImageTag>
+        </Images>
+        <Images Include="RHEL">
+            <BaseOS>RHEL</BaseOS>
+            <OSType>withos</OSType>
+            <ImageType>zip</ImageType>
+            <ImageTag></ImageTag>
+        </Images>
+    </ItemGroup>
+    <ItemGroup>
+        <Paths Include="copy_image_path">
+            <APPs_path>APP\APPs</APPs_path>
+            <Firmwares_path>APP\Firmwares</Firmwares_path>
+            <Drivers_path>APP\Drivers</Drivers_path>
+            <configs1_path>root</configs1_path>
+            <configs2_path>APP\script</configs2_path>
+        </Paths>
+    </ItemGroup>
+    <ItemGroup>
+        <PlatformPropertyFilter Include="PlatformBits">
+          <Value>$(Platform)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="OS">
+          <Value>$(OS)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="PlatformFamily">
+          <Value>$(SOC)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="ProductType">
+          <Value>Consumer</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="OSType">
+          <Value>Desktop</Value>
+        </PlatformPropertyFilter>        
+    </ItemGroup>
+    <ItemGroup>
+    <Ingredients Include="SGXFVT_Tool">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>APPs_path</path>
+    </Ingredients>
+    <Ingredients Include="SPS_Tools">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>APPs_path</path>
+    </Ingredients>
+    <Ingredients Include="SystemScope" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>APPs_path</path>
+    </Ingredients>
+    <Ingredients Include="CAS_Linux" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Drivers_path</path>
+    </Ingredients>
+    <Ingredients Include="LOM_Springville" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Drivers_path</path>
+    </Ingredients>
+    <Ingredients Include="SGX_PSW" >
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Drivers_path</path>
+    </Ingredients>
+    <Ingredients Include="Intel_VROC" >
+        <InjectDriver>true</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Drivers_path</path>
+    </Ingredients>
+    <Ingredients Include="IFWI">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares_path</path>
+    </Ingredients>
+    <Ingredients Include="CPLD">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares_path</path>
+    </Ingredients>
+    <Ingredients Include="BMC">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares_path</path>
+    </Ingredients>
+    <Ingredients Include="PMC">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares_path</path>
+    </Ingredients>
+    <Ingredients Include="config">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>configs1_path</path>
+        <copyfile>true</copyfile>
+    </Ingredients>
+    <Ingredients Include="SPS">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>Firmwares_path</path>
+    </Ingredients>
+    <Ingredients Include="InstallScripts">
+        <InjectDriver>false</InjectDriver>
+        <CopyToImage>true</CopyToImage>
+        <path>configs2_path</path>
+        <copyfile>true</copyfile>
+    </Ingredients>
+    <Ingredients Include="7Zip">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="HSD-ES-API">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="IntelPlatformBuild">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="Python37" >
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="EWDK">
+        <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    </ItemGroup>
+</Project>
