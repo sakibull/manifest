@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest version="2.0">
+  <remote name="Git21" fetch="git21@gf21.devtools.intel.com" type="GitFusion" />
+  <remote name="igk" fetch="git@repos.igk.intel.com" type="GitFusion" />
+  <remote name="TF-1" fetch="ssh://git-amr-1.devtools.intel.com:29418" />
+  <remote name="TF-2" fetch="ssh://git-amr-2.devtools.intel.com:29418" />
+  <remote name="OWR" fetch="ssh://owr.devtools.intel.com:29418" />
+  <remote name="OWR-GitHub" fetch="https://github.com/intel-innersource" />
+  <remote name="Automation-GitLab" fetch="ssh://git@gitlab.devtools.intel.com:29418/OWR/Test" />
+  <remote name="GFX-Main" fetch="ssl:p4proxy07.devtools.intel.com:3210" type="Perforce" />
+  <remote name="BT-Main" fetch="ssl:p4proxy07.devtools.intel.com:2110" type="Perforce" />
+  <remote name="WIFI-Main" fetch="ssl:p4proxy07.devtools.intel.com:1110" type="Perforce" />
+  <remote name="P4-1" fetch="ssl:p4proxy10.devtools.intel.com:4910" type="Perforce" />
+  <remote name="P4-2" fetch="vpdsc.intel.com:1666" type="Perforce" />
+  <remote name="P4-3" fetch="ssl:p4proxy07.devtools.intel.com:2210" type="Perforce" />
+  <remote name="P4-4" fetch="ssl:p4proxy07.devtools.intel.com:2110" type="Perforce" />
+  <remote name="P4-5" fetch="ssl:p4proxy09.devtools.intel.com:3210" type="Perforce" />
+  <remote name="P4-6" fetch="ssl:p4proxy09.devtools.intel.com:2110" type="Perforce" />
+  <remote name="P4-7" fetch="ssl:p4proxy10.devtools.intel.com:2110" type="Perforce" />
+  <remote name="Git32" fetch="git32@gf32.devtools.intel.com" type="GitFusion" />
+  <remote name="Git43" fetch="git43@gf32.devtools.intel.com" type="GitFusion" />
+  <remote name="wosext1" fetch="\\wosext\EXTRoot\MPX\Source" />
+  <remote name="gitweb1" fetch="https://gitweb.igk.intel.com/?p=iRST.git" />
+  <remote name="gitlab1" fetch="ssh://git@gitlab.devtools.intel.com:29418/OWR/XTU/xtu.git" />
+  <artifactory-alias name="default">
+    <read-uri>https://ubit-artifactory.intel.com/artifactory</read-uri>
+    <write-uri>https://ubit-artifactory.intel.com/artifactory</write-uri>
+  </artifactory-alias>
+  <artifactory-alias name="ubit-artifactory-or">
+    <read-uri>https://ubit-artifactory-or.intel.com/artifactory</read-uri>
+    <write-uri>https://ubit-artifactory-or.intel.com/artifactory</write-uri>
+  </artifactory-alias>
+  <artifactory-alias name="ubit-artifactory-sh">
+    <read-uri>https://ubit-artifactory-sh.intel.com/artifactory</read-uri>
+    <write-uri>https://ubit-artifactory-sh.intel.com/artifactory</write-uri>
+  </artifactory-alias>
+  <artifactory-alias name="ubit-artifactory-ba">
+    <read-uri>https://ubit-artifactory-ba.intel.com/artifactory</read-uri>
+    <write-uri>https://ubit-artifactory-ba.intel.com/artifactory</write-uri>
+  </artifactory-alias>
+  <artifactory-alias name="ubit-artifactory-igk">
+    <read-uri>https://af01p-igk.devtools.intel.com/artifactory</read-uri>
+    <write-uri>https://af01p-igk.devtools.intel.com/artifactory</write-uri>
+  </artifactory-alias>
+  <artifactory-alias name="ubit-artifactory-il">
+    <read-uri>https://ubit-artifactory-il.intel.com/artifactory</read-uri>
+    <write-uri>https://ubit-artifactory-il.intel.com/artifactory</write-uri>
+  </artifactory-alias>
+  <artifactory name="OWR" alias="default" pkg-root="Submissions" repo="owr-repos" />
+  <artifactory name="DCG" alias="ubit-artifactory-ba" pkg-root="DEG-Purley-local/Mehlow_Refresh/Linux/Drivers/" repo="" />
+  <artifactory name="Config" alias="ubit-artifactory-ba" pkg-root="DEG-Purley-local/Mehlow_Refresh/Linux/Configs/" repo="" />
+  <artifactory name="Apps" alias="ubit-artifactory-ba" pkg-root="DEG-Purley-local/Mehlow_Refresh/Linux/Apps/" repo="" />
+  <artifactory name="fw" alias="ubit-artifactory-ba" pkg-root="DEG-Purley-local/Mehlow_Refresh/Firmwares/" repo="" />
+  <artifactory name="Os" alias="ubit-artifactory-sh" pkg-root="DEG-Purley-local/Release/OS/" repo="" />
+  <artifactory name="bkc-bdw" alias="default" pkg-root="BDW" repo="bkc-repos" />
+  <artifactory name="Test" alias="default" pkg-root="Test/Content" repo="owr-repos" />
+  <artifactory name="Auto" alias="default" pkg-root="Automation" repo="owr-repos" />
+  <artifactory name="Resources" alias="default" pkg-root="Resources" repo="owr-repos" />
+  <artifactory name="EWDK" alias="default" pkg-root="" repo="owr-repos" />
+  <artifactory name="Tools" alias="default" pkg-root="" repo="owr-repos" />
+  <artifactory name="OWR-Tools" alias="default" pkg-root="Tools" repo="owr-repos" />
+  <artifactory name="OS-A" alias="default" pkg-root="Submissions" repo="lakefieldos-or-local" />
+  <artifactory name="OS-Vetting" alias="ubit-artifactory-or" pkg-root="Submissions" repo="os_vetting-or-local" />
+  <project name="frameworks.devops.intel-devops-framework.abstract-build-interface" ingredient="IntelPlatformBuild" pkg-path="-" version="-" path="Build" revision="2.5.0platci_rc3" remote="OWR-GitHub" type="bldtool" hsd-full-name="platform.Common.sw.tool.OWR Build Scripts">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" />
+      </platforms>
+    <annotations>
+      <annotation name="owner" value="peter.g.tiegs@intel.com" />
+      <annotation name="maintainer" value="bairaiah.gajavada@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+  <project name="mva_test_apps" ingredient="mva_test_apps" pkg-path="Packages\mva_test_apps" version="1.0.56.0" artifactory="OWR" type="tool" hsd-full-name="platform.Common.sw.application.MutilpleVoiceAssistant_TestApps">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" version="1.0.58.1" />
+    </platforms>
+    <annotations>
+      <annotation name="maintainer" value="dariusz.kaczorowski@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+  <project name="vtune" ingredient="vtune" pkg-path="Packages\vtune" version="2022.4.0.624883" artifactory="OWR" type="tool" hsd-full-name="platform.Common.sw.tool.Intel VTune">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" />
+    </platforms>
+    <annotations>
+      <annotation name="maintainer" value="nikita.kiryuhin@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+  <project name="PRAL" ingredient="PRAL" pkg-path="Packages\PRAL" version="v1.9.1.6_230111" artifactory="OWR" type="tool" hsd-full-name="platform.Common.sw.CFC.PRAL">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" />
+    </platforms>
+    <annotations>
+      <annotation name="maintainer" value="vinod.gomathinayagam@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+  <project name="IPF-PSR" ingredient="IPF-PSR" pkg-path="Packages\IPF-PSR" version="16.0.3.0" artifactory="OWR" type="tool" hsd-full-name="platform.Common.sw.library.IPF_Provider_Manageability">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" />
+    </platforms>
+    <annotations>
+      <annotation name="maintainer" value="junhai.qiu@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+  <project name="quicki2c" ingredient="quicki2c" pkg-path="Packages\quicki2c" version="5.0.4000.591" artifactory="OWR" type="driver" hsd-full-name="platform.Common.sw.win-driver.QUICKI2C">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" />
+    </platforms>
+    <annotations>
+      <annotation name="maintainer" value="sudhir2.kumar@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+  <project name="tse" ingredient="tse" pkg-path="Packages\tse" version="tse_pre-alfa_1.0.0.1023.22" artifactory="OWR" type="driver" hsd-full-name="platform.Common.sw.win-driver.Intel TSE Driver">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" />
+    </platforms>
+    <annotations>
+      <annotation name="maintainer" value="pawel.fryczke@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+  <project name="synopsys-lan" ingredient="synopsys-lan" pkg-path="Packages\synopsys-lan" version="intelgbe_230119_msft_signed-v1" artifactory="OWR" type="driver" hsd-full-name="platform.Common.sw.win-driver.synopsys-lan">
+    <platforms>
+      <platform name="MTL-S-MTP-S-SV2-Corp" />
+    </platforms>
+    <annotations>
+      <annotation name="maintainer" value="srinivasan.chinnadurai@intel.com" />
+      <annotation name="vendor" value="Intel" />
+      <annotation name="division" value="CCG" />
+    </annotations>
+  </project>
+</manifest>
+  

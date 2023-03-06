@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <AutoMerge>true</AutoMerge>
+        <IntelPlatformConfig>MTL-S-MTP-S-SV2-Corp</IntelPlatformConfig>
+        <MileStone>PreAlpha</MileStone>
+        <BaseImageName></BaseImageName>
+        <Platform>x64</Platform>
+        <Configuration>Release</Configuration>
+        <SOC>MTL</SOC>
+        <CoreProject>Meteorlake</CoreProject>
+        <SystemType>RVP</SystemType>
+        <OS>Win10</OS>
+        <PreSIZapoRecipe>16628</PreSIZapoRecipe>
+        <HSDExecConfig>platform.Meteor Lake.mtls-dt-Enthusiast-MTLS_MTPS_SV2_Corp</HSDExecConfig>
+        <BuildNotification>patrick.c.bloem@intel.com,dan.nguyen@intel.com,rajdeep.kar@intel.com,chetan.rao@intel.com,sakib.ulla.khan@intel.com,niranjankumarx.venkateswaran@intel.com</BuildNotification>
+        <Gatekeepers>patrick.c.bloem@intel.com,dan.nguyen@intel.com,niranjankumarx.venkateswaran@intel.com</Gatekeepers>
+    </PropertyGroup>
+    <ItemGroup Label="E2E Config">
+        <ExecutionConfig Include="1">
+            <Bootflow>mcc_platform_windows</Bootflow>
+            <CustomSpecifier></CustomSpecifier>
+            <TestSet>Set1</TestSet>
+            <GenParam>--nb --qslot /CCG/WSIV/VP/EHL/batch --</GenParam>
+            <RunInParallel>true</RunInParallel>
+            <TimeDelay>30</TimeDelay>
+        </ExecutionConfig>
+        <ExecutionConfig Include="2">
+            <Bootflow>mcc_platform_windows</Bootflow>
+            <CustomSpecifier></CustomSpecifier>
+            <TestSet>Set2</TestSet>
+            <GenParam>--nb --qslot /CCG/WSIV/VP/EHL/batch --</GenParam>
+            <RunInParallel>true</RunInParallel>
+            <TimeDelay>60</TimeDelay>
+        </ExecutionConfig>
+        <ExecutionConfig Include="3">
+            <Bootflow>mcc_platform_windows</Bootflow>
+            <CustomSpecifier></CustomSpecifier>
+            <TestSet>Set3</TestSet>
+            <GenParam>--nb --qslot /CCG/WSIV/VP/EHL/batch --</GenParam>
+            <RunInParallel>true</RunInParallel>
+            <TimeDelay>90</TimeDelay>
+        </ExecutionConfig>
+        <ExecutionConfig Include="4">
+            <Bootflow>mcc_platform_windows</Bootflow>
+            <CustomSpecifier></CustomSpecifier>
+            <TestSet>Set4</TestSet>
+            <GenParam>--nb --qslot /CCG/WSIV/VP/EHL/batch --</GenParam>
+            <RunInParallel>true</RunInParallel>
+            <TimeDelay>120</TimeDelay>
+        </ExecutionConfig>
+    </ItemGroup>
+    <PropertyGroup Label="E2E Config">
+            <PreSIShare>\\samba.fm.intel.com\nfs\site\disks\icl.os.00\ccg2</PreSIShare>
+            <PreSISharePath>\nfs\site\disks\icl.os.00\ccg2</PreSISharePath>
+            <PreSIController>fmci50204.fm.intel.com</PreSIController>
+            <Run_PreMerge_CI_AT>false</Run_PreMerge_CI_AT>
+            <Run_PostMerge_CI_AT>false</Run_PostMerge_CI_AT>
+            <Run_Daily_AT>false</Run_Daily_AT>
+            <PreSIBronzeTimeout>14400000</PreSIBronzeTimeout>
+            <SimCloudPlatform>meteorlake-m-6.0</SimCloudPlatform>
+    </PropertyGroup>
+    <ItemGroup>
+        <Images Include="WIM">
+            <BaseOS>BaseWIM-Nickel</BaseOS>
+            <OSType>Desktop</OSType>
+            <ImageType>WIM</ImageType>
+            <ImageTag>SV2-5G</ImageTag>
+            <RunBAT>false</RunBAT>
+        </Images>
+    </ItemGroup>
+    <ItemGroup>
+        <PlatformPropertyFilter Include="PlatformBits">
+            <Value>$(Platform)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="OS">
+            <Value>$(OS)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="PlatformFamily">
+            <Value>$(SOC)</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="ProductType">
+            <Value>Corporate</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="OSType">
+            <Value>Desktop</Value>
+        </PlatformPropertyFilter>
+        <PlatformPropertyFilter Include="SigningType">
+          <Value>NewStyle</Value>
+        </PlatformPropertyFilter>
+    </ItemGroup>
+    <ItemGroup>
+    <Ingredients Include="mva_test_apps" />
+    <Ingredients Include="vtune">
+      <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="PRAL">
+      <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="IPF-PSR">
+      <InjectDriver>false</InjectDriver>
+      <CopyToImage>true</CopyToImage>
+    </Ingredients>
+    <Ingredients Include="quicki2c">
+      <InjectDriver>true</InjectDriver>
+      <CopyToImage>true</CopyToImage>
+    </Ingredients>
+    <Ingredients Include="tse">
+      <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="IntelPlatformBuild">
+      <BuildDependency>true</BuildDependency>
+    </Ingredients>
+    <Ingredients Include="synopsys-lan">
+      <BuildDependency>true</BuildDependency>
+    </Ingredients>
+  </ItemGroup>
+</Project>
