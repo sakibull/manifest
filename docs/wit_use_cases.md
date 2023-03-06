@@ -16,3 +16,27 @@ ingredient        Ingredient actions
 | Update  | Update an ingredient in the manifest|
 | show   | Print entries from the manifest to the console|
 | ingredient    | Ingredient actions |
+
+## Wit submit
+
+### Pass scenarios:
+
+#### wit submit ingredient without deploying:
+
+    wit submit mva_test_apps --version 1.0.58.1 --platform LNL-M-SV2-PSS --commit-message "checking the retention period for this" --Manifest LNL-M-SV2-PSS.xml
+
+    Working as expected as we have --Manifest flag where we can pass the manifest file path used as above.
+
+    Here is the branch created from wit submit 
+    https://github.com/sakibull/manifest/pull/2
+
+#### wit submit ingredient with deploying:
+
+    wit submit mva_test_apps --version 1.0.58.1 --platform LNL-M-SV2-PSS --commit-message "checking the retention period for this" --Manifest LNL-M-SV2-PSS.xml
+
+    Working as expected as we have --Manifest flag where we can pass the manifest file path used as above.
+
+    Here is the branch created from wit submit 
+    https://github.com/sakibull/manifest/pull/2
+
+
