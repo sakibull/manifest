@@ -56,5 +56,7 @@ ingredient        Ingredient actions
     
     Working as expected as we have --Manifest flag where we can pass the manifest file path used as above.
 
-
+#### wit sync type specific ingredients for specific platform:
+    wit sync --source --type bldtool  --platform MEH-SRV-HCC-WIN19 --Use-Project-Defaults --Manifest LNL-M-SV2-PSS.xml
+    Working as expected as we have --Manifest flag where we can pass the manifest file path used as above.
 
