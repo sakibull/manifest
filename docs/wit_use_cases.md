@@ -40,12 +40,11 @@ ingredient        Ingredient actions
     https://github.com/sakibull/manifest/pull/3
 
 ### Failed scenarios:
-#### wit submit ingredient to update whole platform family:
+#### wit submit ingredient to update whole platform family [Failed]:
     update all platform configs from the same Platform Family using a single command
 
     wit submit mva_test_apps --version 1.0.58.1-test --platform LNL-M-SV2-PSS --commit-message "checking the retention period for this" --path         C:\Users\sakibull\Music\light_manifest\manifest\Packages\mva_test_apps\MVA-Test-Apps-1.0.58.1-amd64.zip --manifest "C:\Users\sakibull\Music\light_manifest\manifest\LNL-M-SV2-PSS.xml --user sakibull --password *** 
     
-   Failed
 
 ## Wit sync
 
