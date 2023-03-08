@@ -52,7 +52,7 @@ ingredient        Ingredient actions
 
 #### wit sync-v2 ingredient:
 
-    wit sync-v2 --ing mva_test_apps --platform LNL-M-SV2-PSS --Manifest LNL-M-SV2-PSS.xml
+        wit sync-v2 --ing mva_test_apps --platform LNL-M-SV2-PSS --Manifest LNL-M-SV2-PSS.xml
     
     Working as expected as we have --Manifest flag where we can pass the manifest file path used as above.
 
@@ -62,17 +62,17 @@ ingredient        Ingredient actions
 
 #### wit sync all the ingredients for specific platform:
 
-wit sync-v2  --platform MEH-SRV-HCC-WIN19 --Use-Project-Defaults --Manifest LNL-M-SV2-PSS.xml   
-Working as expected as we have --Manifest flag where we can pass the manifest file path used as above.
+    wit sync-v2  --platform MEH-SRV-HCC-WIN19 --Use-Project-Defaults --Manifest LNL-M-SV2-PSS.xml   
+    Working as expected as we have --Manifest flag where we can pass the manifest file path used as above.
 
 #### wit sync only the specific ingredients:
 
-wit sync-v2 Ingredients --only mva_test_apps --Manifest LNL-M-SV2-PSS.xml
-Working as expected.
+    wit sync-v2 Ingredients --only mva_test_apps --Manifest LNL-M-SV2-PSS.xml
+    Working as expected.
 
 #### wit sync only the specific ingredient for specific platform:
-wit sync-v2 Ingredients --only mva_test_apps --Manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS
-Working as expected.
+    wit sync-v2 Ingredients --only mva_test_apps --Manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS
+    Working as expected.
 
 ## Wit update
 
@@ -80,12 +80,12 @@ Working as expected.
 
 #### reset to platform default using wit update on specific ingredients:
 
-wit update mva_test_apps  --Reset-Platform-Default --manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS
-working as expected.
+    wit update mva_test_apps  --Reset-Platform-Default --manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS
+    working as expected.
 
 #### update the type of the project:
-wit update mva_test_apps  --manifest LNL-M-SV2-PSS.xml --Type bldtool --Default
-working as expected
+    wit update mva_test_apps  --manifest LNL-M-SV2-PSS.xml --Type bldtool --Default
+    working as expected
 
 
 ## Wit Show
@@ -94,23 +94,23 @@ working as expected
 
 #### wit show command to retrive the global artifactory path:
 
-wit show --artifactory-glb --manifest LNL-M-SV2-PSS.xml
-working as expected
+    wit show --artifactory-glb --manifest LNL-M-SV2-PSS.xml
+    working as expected
 
 #### wit show command to retrive the ingredient details:
 
-wit show --ingredients vtune --manifest LNL-M-SV2-PSS.xml
-working as expected
+    wit show --ingredients vtune --manifest LNL-M-SV2-PSS.xml
+    working as expected
 
 #### wit show details of a single ingredient
-wit show --ingredient vtune --manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS --property PACKAGEPATH
-wit show --ingredient vtune --manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS --property VERSION
+    wit show --ingredient vtune --manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS --property PACKAGEPATH
+    wit show --ingredient vtune --manifest LNL-M-SV2-PSS.xml --platform LNL-M-SV2-PSS --property VERSION
 
-working as expected.
+    working as expected.
 
 ## Wit locate
 
 ### Pass scenarios:
 #### locate the ingredient
-wit ingredient locate --ingredient mva_test_apps --version 1.0.58.1-test1 -m LNL-M-SV2-PSS
-working as expected
+    wit ingredient locate --ingredient mva_test_apps --version 1.0.58.1-test1 -m LNL-M-SV2-PSS
+    working as expected
