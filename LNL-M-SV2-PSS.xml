@@ -64,7 +64,7 @@
   <project name="frameworks.devops.intel-devops-framework.abstract-build-interface" ingredient="IntelPlatformBuild" pkg-path="-" version="-" path="Build" revision="2.5.0platci_rc3" remote="OWR-GitHub" type="bldtool" hsd-full-name="platform.Common.sw.tool.OWR Build Scripts">
     <platforms>
       <platform name="LNL-M-SV2-PSS" />
-      </platforms>
+    </platforms>
     <annotations>
       <annotation name="owner" value="peter.g.tiegs@intel.com" />
       <annotation name="maintainer" value="bairaiah.gajavada@intel.com" />
@@ -74,7 +74,7 @@
   </project>
   <project name="mva_test_apps" ingredient="mva_test_apps" pkg-path="Packages\mva_test_apps" version="1.0.56.0" artifactory="OWR" type="tool" hsd-full-name="platform.Common.sw.application.MutilpleVoiceAssistant_TestApps">
     <platforms>
-      <platform name="LNL-M-SV2-PSS" version="1.0.58.1" />
+      <platform name="LNL-M-SV2-PSS" version="1.0.58.1-test1" />
     </platforms>
     <annotations>
       <annotation name="maintainer" value="dariusz.kaczorowski@intel.com" />
@@ -143,4 +143,3 @@
     </annotations>
   </project>
 </manifest>
-  
