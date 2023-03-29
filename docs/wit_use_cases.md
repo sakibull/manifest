@@ -27,7 +27,7 @@
 ### Post downtime activity Task
 
     * Remove the label from downtime_labels defined in JSON file.
-    * revert the default label changes from jenkins file.
+    * revert the default label changes from jenkins files.
 
 **Note** - **'owr2_platform-1.0.0'** - default label
    *consist of BA & OR agents. So need to update default pool to 'platformci_win_us' or dcgba during downtime. Very few builds run on SH agents and there are very    few nodes, so we will not update it to DCGSH for BA or OR shutdown activity.
