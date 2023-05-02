@@ -1,3 +1,15 @@
+# Plan to see the impact of light wieght manifest:
+
+**Step1:**
+Inspect all the jobs and stages of PlatCI , see the impact on the PlatCI E2E flow.
+
+**Step 2:**
+Going through all the PlatCI libs and Services and find out the impact based on module.
+
+Plan is to go with Step1 first followed by Step2.
+
+**Approval from Anil:**_______________
+
 # Impact on orchestrator with latest light weight design.
 
 ## CLI: pOWR pyWit check:
