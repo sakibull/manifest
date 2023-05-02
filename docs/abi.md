@@ -39,10 +39,7 @@ powr/diffcheck.py::manifest_diff_output # this method used to check the changed 
 No dependency on Manifest.xml 
 
 ## CLI: ${jobManager} orchestrator create-new-submission-message:
-It does have dependency on Manifest,
-https://github.com/intel-innersource/frameworks.devops.platform-integration-framework.job-manager/blob/main/job_manager/scripts/orchestrator.py#L519
-
-job_manager/orchestrator/utils.py::get_changed_platforms_data have dependency on Manifest.xml, we do have platform list which we can iterate to support light wieght
+job_manager/orchestrator/utils.py::get_changed_platforms_data  # have dependency on Manifest.xml, we do have platform list which we can iterate to support light wieght
 
 
 **Open**:
