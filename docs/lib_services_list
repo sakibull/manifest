@@ -1,0 +1,9 @@
+Libraries and services that need to be inspected.:
+* ABI 
+* pOWR
+* Automerge
+* Precheck core
+* Kit register
+* Precheck-service
+* Exception Service
+* Manifest repo Scripts
