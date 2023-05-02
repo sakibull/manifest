@@ -37,9 +37,9 @@ We have a verify data function call in generate-platform-artifacts , it requires
 https://github.com/intel-innersource/frameworks.devops.platform-integration-framework.job-manager/blob/main/job_manager/scripts/orchestrator.py#L371
 
 defined in pOWR which should also be updated:
-powr/checker.py
+powr/checker.py::verify_data
+powr/diffcheck.py::manifest_diff_output # this method used to check the changed platforms in Manifest.xml , in our we will have multiple manifest so we should update the logic
 
-Check where we take ingredient owner ids which requires Manifest to pull the data.
 
 {automerge} latest:
 No dependency on Manifest.xml 
@@ -48,9 +48,11 @@ ${jobManager} orchestrator create-new-submission-message:
 It does have dependency on Manifest,
 https://github.com/intel-innersource/frameworks.devops.platform-integration-framework.job-manager/blob/main/job_manager/scripts/orchestrator.py#L519
 
-job_manager/orchestrator/utils.py::get_changed_platforms_data have dependency on Manifest.xml, we do have pplatform list which we can iterate to support light wieght
+job_manager/orchestrator/utils.py::get_changed_platforms_data have dependency on Manifest.xml, we do have platform list which we can iterate to support light wieght
 
 
+Open:
+Check where we are pulling ingredient owner ids which requires Manifest to pull the data.
 
 
 
