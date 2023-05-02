@@ -30,10 +30,8 @@ No dependency on Manifest.xml
 
 ## CLI: {jobManager} orchestrator generate-platform-artifacts:
 
-We have a verify data function call in generate-platform-artifacts , it requires Manifest.xml --> currently its a keyword argument but we do have a platform list which we can utilize when we move to light wight manifest.
-https://github.com/intel-innersource/frameworks.devops.platform-integration-framework.job-manager/blob/main/job_manager/scripts/orchestrator.py#L371
+powr/checker.py::verify_data # We have a verify data function call in generate-platform-artifacts , it requires Manifest.xml --> currently its a keyword argument but we do have a platform list which we can utilize when we move to light wight manifest <br/>
 
-powr/checker.py::verify_data<br>
 powr/diffcheck.py::manifest_diff_output # this method used to check the changed platforms in Manifest.xml , in our we will have multiple manifest so we should update the logic
 
 
