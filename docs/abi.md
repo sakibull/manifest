@@ -45,7 +45,7 @@ https://github.com/intel-innersource/frameworks.devops.platform-integration-fram
 job_manager/orchestrator/utils.py::get_changed_platforms_data have dependency on Manifest.xml, we do have platform list which we can iterate to support light wieght
 
 
-Open:
+**Open**:
 Check where we are pulling ingredient owner ids which requires Manifest to pull the data.
 
 
