@@ -1,9 +1,6 @@
 # Impact on orchestrator with latest light weight design.
 
-Orchestrator:
-
-
-pOWR pyWit check:
+##CLI: pOWR pyWit check:
 this will check if the provided manifest is good or not [able to parse or not]
 Dependency on Manifest.xml , in our case we cannot verify because we will have platform.xml
 
