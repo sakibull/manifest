@@ -7,3 +7,5 @@ is it one platform at a time or multiple platforms[support in pOWR].
 
 Commonlib dll which are required ?
 Micheljanin , yong , abram
+
+check Dependency on commonlibrary ?
