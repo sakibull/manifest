@@ -3,7 +3,7 @@
 2 **pOWR (Including lib and micro service)** <br>
 3 **Automerge** <br>
 4 **Precheck-core** <br>
-5 **Kit-register** <br>
+5 **Build-kit** <br>
 6 **Precheck-service** <br>
 7 **Exception Service** <br>
 8 **Manifest repo Scripts** <br>
